@@ -65,13 +65,13 @@
           audio.play();
         });
         background.innerHTML += `<img src="img${Math.floor(
-          Math.random() * 2
+          Math.random() * 5
         )}.png" alt"da baby1!!!">`;
       }
       async function changeTitle() {
         for (let i = 0; i < songArray.length; i++) {
           document.title = songArray[i];
-          await sleep(200);
+          await sleep(250);
         }
       }
       changeTitle();
