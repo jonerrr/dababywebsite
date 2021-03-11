@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-   <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "288c2fee59f54d88ac2879efc263f047"}'></script><!-- End Cloudflare Web Analytics -->
+    <!-- Cloudflare Web Analytics -->
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "288c2fee59f54d88ac2879efc263f047"}'
+    ></script>
+    <!-- End Cloudflare Web Analytics -->
     <link rel="shortcut icon" type="image/jpg" href="favicon.jpeg" />
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -20,11 +26,12 @@
         background-color: #111111;
       }
       #vid {
-        position: fixed;
+        /* position: fixed;
         right: 0;
         bottom: 0;
         min-width: 100%;
-        min-height: 100%;
+        min-height: 100%; */
+        object-fit: fill;
       }
     </style>
   </head>
@@ -40,8 +47,12 @@
       const num = Math.floor(Math.random() * 2);
       const background = document.getElementById("background");
       if (num === 0) {
-        background.innerHTML += `<video width="720" height="720" autoplay loop id="vid"> <source src="vid${Math.floor(
-          Math.random() * 2
+        background.innerHTML += `<video autoplay width="${
+          window.innerWidth
+        }" height="${
+          window.innerHeight
+        }" loop id="vid"> <source src="vid${Math.floor(
+          Math.random() * 4
         )}.mp4" type="video/mp4" /> </video>`;
         document.querySelector("html").addEventListener("click", function () {
           document.getElementById("vid").play();
@@ -53,7 +64,9 @@
         });
         background.innerHTML += `<img src="img${Math.floor(
           Math.random() * 5
-        )}.png" alt"da baby1!!!">`;
+        )}.png" alt"da baby1!!!" width="${window.innerWidth}" height="${
+          window.innerHeight
+        }">`;
       }
       async function changeTitle() {
         for (let i = 0; i < songArray.length; i++) {
