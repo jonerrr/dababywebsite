@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+}
+
+a {
+    color: aquamarine;
+}
+
+body {
+    margin: 0;
+    background-color: #181818;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#bodyfaq {
+    background-image: url("../media/dababtb.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#faq {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    color: whitesmoke;
+    transform: translate(-50%, -50%);
+}
+
+#faq #home {
+    margin: 10px;
+    color: aquamarine;
+}
+
+#faq h1 {
+    margin: 10px;
+}
+
+#footer {
+    background-color: #181818;
+    text-align: center;
+    color: whitesmoke;
+    width: 100%;
+    height: 50px;
+}
+
+#vid {
+    width: 100vw;
+    height: 90vh;
+}
+
+#img {
+    width: 100vw;
+    height: 90vh;
+}
