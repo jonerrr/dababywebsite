@@ -1,4 +1,4 @@
-require("dotenv").config(); // i hate env
+const config = require("./config.json");
 const express = require("express");
 const dynamoose = require("dynamoose");
 const multer = require("multer");
@@ -16,11 +16,11 @@ const app = express();
 app.use(cors());
 
 dynamoose.aws.sdk.config.update({
-  accessKeyId: process.env.KEY,
-  secretAccessKey: process.env.SECRET,
-  region: process.env.REGION,
+  accessKeyId: config.KEY,
+  secretAccessKey: config.SECRET,
+  region: config.REGION,
 });
-const client = new S3Client({ region: process.env.REGION });
+const client = new S3Client({ region: config.REGION });
 
 const imageSchema = new dynamoose.Schema({
   id: {
@@ -64,7 +64,7 @@ const totalModel = dynamoose.model("dababy-totals", totalSchema, {
 app.post("/submit", upload.single("file"), async function (req, res) {
   const imageName = `${nanoid()}${path.extname(req.file.originalname)}`;
   const s3Params = {
-    Bucket: process.env.BUCKET,
+    Bucket: config.BUCKET,
     Key: imageName,
     Body: req.file.buffer,
     ContentType: req.file.mimetype,
