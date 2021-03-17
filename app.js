@@ -95,6 +95,9 @@ app.post("/check", function (req, res) {
   res.send("no");
 });
 
-app.listen(3000, function () {
-  console.log("Listening on port 3000");
+app.listen(80, function () {
+  console.log("Listening on port 80");
+});
+app.listen(443, function () {
+  console.log("Listening on port 443");
 });
