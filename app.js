@@ -39,7 +39,7 @@ const userSchema = new dynamoose.Schema({
     type: String,
   },
 });
-
+// ok
 const totalSchema = new dynamoose.Schema({
   imageTotal: {
     type: String,
