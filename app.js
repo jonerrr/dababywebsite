@@ -5,61 +5,61 @@ const multer = require("multer");
 const cors = require("cors");
 const path = require("path");
 const nanoid = require("nanoid");
-const { S3Client, PutObjectCommand } = require("@aws-sdk/client-s3");
-const {
-  RekognitionClient,
-  CompareFacesCommand,
-} = require("@aws-sdk/client-rekognition");
+// const { S3Client, PutObjectCommand } = require("@aws-sdk/client-s3");
+// const {
+//   RekognitionClient,
+//   CompareFacesCommand,
+// } = require("@aws-sdk/client-rekognition");
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 const app = express();
 app.use(cors());
 
-dynamoose.aws.sdk.config.update({
-  accessKeyId: config.KEY,
-  secretAccessKey: config.SECRET,
-  region: config.REGION,
-});
-const client = new S3Client({ region: config.REGION });
+// dynamoose.aws.sdk.config.update({
+//   accessKeyId: config.KEY,
+//   secretAccessKey: config.SECRET,
+//   region: config.REGION,
+// });
+// const client = new S3Client({ region: config.REGION });
 
-const imageSchema = new dynamoose.Schema({
-  id: {
-    type: String,
-  },
-  enabled: {
-    type: Boolean,
-  },
-});
+// const imageSchema = new dynamoose.Schema({
+//   id: {
+//     type: String,
+//   },
+//   enabled: {
+//     type: Boolean,
+//   },
+// });
 
-const userSchema = new dynamoose.Schema({
-  id: {
-    type: String,
-  },
-  password: {
-    type: String,
-  },
-});
+// const userSchema = new dynamoose.Schema({
+//   id: {
+//     type: String,
+//   },
+//   password: {
+//     type: String,
+//   },
+// });
 
-const totalSchema = new dynamoose.Schema({
-  imageTotal: {
-    type: String,
-  },
-  time: {
-    type: Date,
-  },
-});
+// const totalSchema = new dynamoose.Schema({
+//   imageTotal: {
+//     type: String,
+//   },
+//   time: {
+//     type: Date,
+//   },
+// });
 
-const imageModel = dynamoose.model("dababy-images", imageSchema, {
-  create: false,
-});
+// const imageModel = dynamoose.model("dababy-images", imageSchema, {
+//   create: false,
+// });
 
-const userModel = dynamoose.model("dababy-users", userSchema, {
-  create: false,
-});
+// const userModel = dynamoose.model("dababy-users", userSchema, {
+//   create: false,
+// });
 
-const totalModel = dynamoose.model("dababy-totals", totalSchema, {
-  create: false,
-});
+// const totalModel = dynamoose.model("dababy-totals", totalSchema, {
+//   create: false,
+// });
 
 app.post("/submit", upload.single("file"), async function (req, res) {
   const imageName = `${nanoid()}${path.extname(req.file.originalname)}`;
@@ -97,7 +97,4 @@ app.post("/check", function (req, res) {
 
 app.listen(80, function () {
   console.log("Listening on port 80");
-});
-app.listen(443, function () {
-  console.log("Listening on port 443");
 });
