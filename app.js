@@ -1,6 +1,6 @@
-const config = require("./config.json");
+// const config = require("./config.json");
 const express = require("express");
-const dynamoose = require("dynamoose");
+// const dynamoose = require("dynamoose");
 const multer = require("multer");
 const cors = require("cors");
 const path = require("path");
@@ -63,13 +63,13 @@ app.use(cors());
 
 app.post("/submit", upload.single("file"), async function (req, res) {
   const imageName = `${nanoid()}${path.extname(req.file.originalname)}`;
-  const s3Params = {
-    Bucket: config.BUCKET,
-    Key: imageName,
-    Body: req.file.buffer,
-    ContentType: req.file.mimetype,
-    ACL: "public-read",
-  };
+  // const s3Params = {
+  //   Bucket: config.BUCKET,
+  //   Key: imageName,
+  //   Body: req.file.buffer,
+  //   ContentType: req.file.mimetype,
+  //   ACL: "public-read",
+  // };
   const dbParams = {
     id: imageName,
     enabled: true,
@@ -95,6 +95,6 @@ app.post("/check", function (req, res) {
   res.send("no");
 });
 
-app.listen(80, function () {
-  console.log("Listening on port 80");
+app.listen(3500, function () {
+  console.log("Listening on port 3500");
 });
