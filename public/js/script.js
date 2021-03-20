@@ -14,7 +14,7 @@ if (num === 0) {
   }" height="${
     window.innerHeight
   }" loop id="vid"> <source src="./media/vid${Math.floor(
-    Math.random() * 4
+    Math.random() * 8
   )}.mp4" type="video/mp4" /> </video>`;
   document.querySelector("html").addEventListener("click", function () {
     document.getElementById("vid").play();
@@ -24,7 +24,7 @@ if (num === 0) {
     changeTitle();
   });
   background.innerHTML += `<img src="./media/img${Math.floor(
-    Math.random() * 5
+    Math.random() * 7
   )}.png" alt"da baby1!!!" width="${window.innerWidth}" height="${
     window.innerHeight
   }" id="img">`;
@@ -35,10 +35,10 @@ async function changeTitle() {
 
   const audio = document.querySelector("audio");
   audio.play();
-  await sleep(1000);
+  await sleep(100);
   for (let i = 0; i < songArray.length; i++) {
     document.title = songArray[i];
 
-    await sleep(154);
+    await sleep(250);
   }
 }
