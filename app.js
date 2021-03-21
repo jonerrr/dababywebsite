@@ -1,6 +1,5 @@
 // const config = require("./config.json");
 const express = require("express");
-const dababy = "nigger"
 // const dynamoose = require("dynamoose");
 const multer = require("multer");
 const cors = require("cors");
@@ -96,10 +95,6 @@ app.post("/approve", function (req, res) {
 app.post("/check", function (req, res) {
   res.send("no");
 });
-
-app.post("/nigger", function(req, res) {
-  res.send(dababy)
-}
 
 app.listen(3500, function () {
   console.log("Listening on port 3500");
