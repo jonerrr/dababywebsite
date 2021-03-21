@@ -79,6 +79,7 @@ app.post("/submit", upload.single("file"), async function (req, res) {
 
 app.use("/", express.static(path.join(__dirname, "public")));
 
+
 app.post("/shorten", function (req, res) {
   res.send("no");
 });

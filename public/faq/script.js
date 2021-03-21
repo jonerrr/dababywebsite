@@ -13,7 +13,7 @@ if (num === 0) {
     window.innerWidth
   }" height="${
     window.innerHeight
-  }" loop id="vid"> <source src="./media/vid${Math.floor(
+  }" loop id="vid"> <source src="vid${Math.floor(
     Math.random() * 8
   )}.mp4" type="video/mp4" /> </video>`;
   document.querySelector("html").addEventListener("click", function () {
@@ -23,7 +23,7 @@ if (num === 0) {
   document.querySelector("html").addEventListener("click", function () {
     changeTitle();
   });
-  background.innerHTML += `<img src="./media/img${Math.floor(
+  background.innerHTML += `<img src="img${Math.floor(
     Math.random() * 7
   )}.png" alt"da baby1!!!" width="${window.innerWidth}" height="${
     window.innerHeight
