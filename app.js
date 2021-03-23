@@ -15,6 +15,8 @@ const upload = multer({ storage: storage });
 const app = express();
 app.use(cors());
 
+// why the fuck do  you comment each line out at once my brain please you're so fucking dumb
+
 // dynamoose.aws.sdk.config.update({
 //   accessKeyId: config.KEY,
 //   secretAccessKey: config.SECRET,
