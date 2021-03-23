@@ -1,0 +1,21 @@
+.faq {
+    background-image: url("dababtb.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+p {
+    color: white;
+    font-family: 'Comic Sans MS';
+    font-size: 15pt;
+    text-align: justify;
+    text-shadow: 1px 1px black;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Comic Sans MS';
+    font-size: 55pt;
+    color:white;
+    text-shadow:1px 1px black;
+}

@@ -2,6 +2,7 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 const jpg = []; //TODO change these to getting from a db (dynamo!!!)
+// fuck dynamo
 const jpeg = [];
 const gifs = [];
 const png = [];
@@ -13,7 +14,7 @@ if (num === 0) {
     window.innerWidth
   }" height="${
     window.innerHeight
-  }" loop id="vid"> <source src="vid${Math.floor(
+  }" loop id="vid"> <source src="media/vid${Math.floor(
     Math.random() * 10
   )}.mp4" type="video/mp4" /> </video>`;
   document.querySelector("html").addEventListener("click", function () {
@@ -23,7 +24,7 @@ if (num === 0) {
   document.querySelector("html").addEventListener("click", function () {
     changeTitle();
   });
-  background.innerHTML += `<img src="img${Math.floor(
+  background.innerHTML += `<img src="media/img${Math.floor(
     Math.random() * 9
   )}.png" alt"da baby1!!!" width="${window.innerWidth}" height="${
     window.innerHeight
