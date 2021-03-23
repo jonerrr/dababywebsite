@@ -63,6 +63,7 @@ app.use(cors());
 
 app.post("/submit", upload.single("file"), async function (req, res) {
   const imageName = `${nanoid()}${path.extname(req.file.originalname)}`;
+  const dababy = "LESSS GOOOOO"
   // const s3Params = {
   //   Bucket: config.BUCKET,
   //   Key: imageName,
@@ -74,6 +75,7 @@ app.post("/submit", upload.single("file"), async function (req, res) {
     id: imageName,
     enabled: true,
   };
+  res.send(dababy)
   res.send("no");
 });
 
